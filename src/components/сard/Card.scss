@@ -1,0 +1,147 @@
+@import "../../assets/style/variables/defaultVariables.scss";
+@import "../../assets/style/mixins/mixin.scss";
+
+.cardForecast,.cardCurrent {
+  background-color: $white;
+  border-radius: 10px;
+}
+
+.cardCurrent {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 0;
+  grid-template-areas:
+          "weatherLocal weatherTemperature"
+          "weatherDate weatherConditions";
+  border: 1pt solid $lightGray;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  > {
+    .weatherLocal {
+      text-align: left;
+      .localName {
+        @include font($font-19, $dark);
+      }
+      .descriptionWeather {
+        text-transform: capitalize;
+        @include font($font-13, $gray);
+      }
+    }
+
+    .weatherTemperature {
+      display: flex;
+      justify-content: flex-end;
+      text-align: right;
+      img {
+        width: 100%;
+        max-width: 100px;
+      }
+      .temperature {
+        align-self: center;
+        @include font($font-26, $dark);
+        .value {
+          padding-right: 15px
+        }
+      }
+    }
+
+    .weatherDate {
+      text-align: left;
+      .date {
+        @include font($font-15, $dark);
+      }
+      .time {
+        @include font($font-13, $gray);
+      }
+    }
+
+    .weatherConditions {
+      text-align: right;
+      @include font($font-13, $gray);
+    }
+  }
+}
+
+.cardForecast {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 1pt solid $lightGray;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+
+  > {
+    .weatherLocal {
+      display: none;
+      box-sizing: border-box;
+      padding: 15px 15px 0 15px;
+    }
+
+    .weatherTemperature {
+      @include font($font-15, $gray);
+      box-sizing: border-box;
+      padding-top: 0;
+      img {
+        width: 100%;
+        max-width: 100px;
+      }
+    }
+
+    .weatherDate {
+      @include font($font-15, $gray);
+      box-sizing: border-box;
+      text-align: center;
+      padding-bottom: 0;
+      > {
+        .date {
+          display: none;
+        }
+      }
+    }
+
+    .weatherConditions {
+      @include font($font-10, $gray);
+      height: 100%;
+      background-color: $lighter-blue;
+      text-align: center;
+      box-sizing: border-box;
+      border-top: 1pt solid $lightGray;
+      > div > .title{
+        display: none;
+      }
+    }
+    .weatherLocal,
+    .weatherTemperature,
+    .weatherDate,
+    .weatherConditions{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.weatherLocal {
+  grid-area: weatherLocal;
+}
+.weatherTemperature {
+  grid-area: weatherTemperature;
+}
+.weatherDate {
+  grid-area: weatherDate;
+}
+.weatherConditions {
+  grid-area: weatherConditions;
+}
+
+.weatherLocal,
+.weatherTemperature,
+.weatherDate,
+.weatherConditions{
+  padding: 15px
+}
+
+
+
+

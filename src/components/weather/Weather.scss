@@ -1,0 +1,14 @@
+.weather {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 10px 0;
+  grid-template-areas:
+          "a"
+          "b";
+  grid-area: weather;
+  padding-top: 15px;
+}
+
+.weatherCurrent { grid-area: a; }
+.weatherForecast { grid-area: b; }

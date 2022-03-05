@@ -1,0 +1,6 @@
+.weatherForecast {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: 1fr;
+  gap: 0 10px;
+}
