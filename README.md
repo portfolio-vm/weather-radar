@@ -10,7 +10,7 @@ The weather data is retrieved from the [OpenWeatherMap Service](https://openweat
 
 
 ## Installation of necessary modules
-You need to download [download]() or clone [clone]() the project [Weather radar]().
+You need to download [download](https://github.com/portfolio-vm/weather-radar/archive/refs/heads/master.zip) or clone [clone](https://github.com/portfolio-vm/weather-radar.git) the project [Weather radar](https://github.com/portfolio-vm/weather-radar).
 
 From the root directory of the project, 
 you must enter the command in the console:
